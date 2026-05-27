@@ -18,16 +18,10 @@
     "name": "expensesv1.1",
     "newArchEnabled": true,
     "orientation": "portrait",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "plugins": [
-      "expo-router"
-    ],
+    "platforms": ["ios", "android", "web"],
+    "plugins": ["expo-router"],
     "scheme": "expensesv11",
-    "slug": "expensesv1.1",
+    "slug": "expensesv1-1",
     "splash": {
       "backgroundColor": "#ffffff",
       "image": "./assets/images/splash-icon.png",

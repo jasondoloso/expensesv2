@@ -2,6 +2,23 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import * as Yup from 'yup';
+
+interface UserLogin {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
+}
+
+const createYupSchema = <T extends object>(schema: Yup.ObjectSchema<T>): Yup.ObjectSchema<T> => schema;
+
+export const UserCreateSchema = createYupSchema<UserLogin>(
+  Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+    rememberMe: Yup.boolean(),
+  })
+)
 
 export default function TabOneScreen() {
   return (
